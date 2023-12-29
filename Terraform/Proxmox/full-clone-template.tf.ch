@@ -54,7 +54,7 @@ resource "proxmox_vm_qemu" "SERVER NAME" {
     
     # (Optional) Add your SSH KEY
     # sshkeys = <<EOF
-    # #YOUR-PUBLIC-SSH-KEY
+
     # EOF
 
     # Ignore qemu_os and sshkey changes in the cloud init drive 
