@@ -1,0 +1,31 @@
+#cloud-config
+autoinstall:
+  version: 1
+  locale: en_US
+  keyboard:
+    layout: de
+  ssh:
+    install-server: true
+    allow-pw: true
+    disable_root: true
+    ssh_quiet_keygen: true
+    allow_public_ssh_keys: true
+  packages:
+    - qemu-guest-agent
+    - sudo
+  storage:
+    layout:
+      name: direct
+    swap:
+      size: 0
+  user-data:
+    package_upgrade: true
+    timezone: Europe/Berlin
+    users:
+      - name: linadm
+        lock-passwd: false
+        passwd: "03c02ebc45bc097d250d61ebdee6787076492c4c15029c828a24f1598ba62b8e9bc6460051b801f48ecb3b3074111b19b7c2c5ebf910de4e4fa3bc5822ad93cb"
+        ssh_authorized_keys:
+          - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC1KWuObVnf0JDcZK3Rpd8czpCbSw7tNrVbzjdbiI7t1+Ui9xjbRE+porS60c+/Xf+32UyQd/KDlLybPwbGnM9hb9y7FPrOMhCV3USG2b15H1JUDDJ6ppkXQOnflmpGwd/wJGFwJVUAOq7LKdawW1/7cyfcbPsoFOh7nIv+lh5Nba8XYh90b983ukl+NegGOXhdhPPJvBDEWhlVoD30DMi+afayGpuEJFn4OEgZyWh8I9jEc2yTkXdkli409WHr+uxynCY6h8cVAKgzSFGCsXgVsEWFvKoZxK/npt/HynMA6+VpVpXJTvdjtycDiQ4OmHMEDw5sTy3Rc8EleMjajA5tDIvFydjrb0ec2qLGZ1I1dbhRdcYnyZWfrZ7fWsxvhdZ6sGj2IuK10z7AOOXA1yBM/eVw6HH6L2HpxMITPYi35me4jmFvKvj9m1GYO7jp8DC/4QluzXrAy7rVzztxCWZ2GaMgi7rD7yuK54gPRiAGNHYX9a0jAmJay7MP7aK9lQM= root@tele-jump-hos
+        sudo: ALL=(ALL) NOPASSWD:ALL
+        shell: /bin/bash
