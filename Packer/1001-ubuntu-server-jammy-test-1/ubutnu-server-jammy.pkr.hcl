@@ -94,7 +94,7 @@ source "proxmox-iso" "ubuntu-server-jammy" {
     http_port_min = 8802
     http_port_max = 8802
 
-    ssh_username = "svc_linautomaion"
+    ssh_username = "svc_linautomation"
 
     # (Option 1) Add your Password here
     #ssh_password = "Test123"
